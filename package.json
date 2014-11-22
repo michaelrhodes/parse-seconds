@@ -10,11 +10,21 @@
     "type": "git",
     "url": "git@github.com:michaelrhodes/parse-seconds.git"
   },
-  "keywords": ["parse", "seconds"],
+  "keywords": [
+    "parse",
+    "seconds"
+  ],
   "author": "Michael Rhodes",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/michaelrhodes/parse-seconds/issues"
   },
-  "homepage": "https://github.com/michaelrhodes/parse-seconds"
+  "homepage": "https://github.com/michaelrhodes/parse-seconds",
+  "devDependencies": {
+    "day-seconds": "^0.1.0",
+    "shallow-copy": "0.0.1",
+    "tape": "^3.0.3",
+    "week-seconds": "^0.1.1",
+    "year-seconds": "^0.1.3"
+  }
 }

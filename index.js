@@ -1,7 +1,13 @@
-module.exports = function (options) {
-  options = options || {}
+module.exports = function (accept) {
+  if (accept === undefined) {
+    accept = {}
+  }
 
-  return function(seconds) {
+  return !isNaN(accept) ?
+    parse(accept) :
+    parse
+  
+  function parse (seconds) {
     var parsed = {
       years: 0,
       weeks: 0,
@@ -11,31 +17,31 @@ module.exports = function (options) {
     }
 
     // Years
-    if (options.years !== false) {
-      parsed.years = ~~(seconds / 60 / 60 / 24 / 7 / 52)
-      seconds -= parsed.years * 60 * 60 * 24 * 7 * 52
+    if (accept.years !== false) {
+      parsed.years = ~~(seconds / 60 / 60 / 24 / 365)
+      seconds -= parsed.years * 60 * 60 * 24 * 365
     }
 
     // Weeks
-    if (options.weeks !== false) {
+    if (accept.weeks !== false) {
       parsed.weeks = ~~(seconds / 60 / 60 / 24 / 7)
       seconds -= parsed.weeks * 60 * 60 * 24 * 7
     }
 
     // Days
-    if (options.days !== false) {
+    if (accept.days !== false) {
       parsed.days = ~~(seconds / 60 / 60 / 24)
       seconds -= parsed.days * 60 * 60 * 24
     }
 
     // Hours
-    if (options.hours !== false) {
+    if (accept.hours !== false) {
       parsed.hours = ~~(seconds / 60 / 60)
       seconds -= parsed.hours * 60 * 60
     }
 
     // Minutes
-    if (options.minutes !== false) {
+    if (accept.minutes !== false) {
       parsed.minutes = ~~(seconds / 60)
       seconds -= parsed.minutes * 60
     }
