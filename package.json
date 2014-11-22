@@ -1,7 +1,7 @@
 {
   "name": "parse-seconds",
   "version": "1.0.0",
-  "description": "parse seconds into years, weeks, days, hours, and/or minutes",
+  "description": "Parse seconds into years, weeks, days, hours, and/or minutes.",
   "main": "index.js",
   "scripts": {
     "test": "tape test.js"
@@ -10,10 +10,7 @@
     "type": "git",
     "url": "git@github.com:michaelrhodes/parse-seconds.git"
   },
-  "keywords": [
-    "parse",
-    "seconds"
-  ],
+  "keywords": ["parse", "seconds"],
   "author": "Michael Rhodes",
   "license": "MIT",
   "bugs": {
